@@ -1,27 +1,27 @@
 part of 'n2o_bloc.dart';
 
-enum N2oStatus {
+enum N2OStatus {
   initial,
   loading,
   success,
   error,
 }
 
-extension N2oStatusX on N2oStatus{
-  bool get isInitial => this == N2oStatus.initial;
-  bool get isLoading => this == N2oStatus.loading;
-  bool get isSuccess => this == N2oStatus.success;
-  bool get isError => this == N2oStatus.error;
+extension N2oStatusX on N2OStatus{
+  bool get isInitial => this == N2OStatus.initial;
+  bool get isLoading => this == N2OStatus.loading;
+  bool get isSuccess => this == N2OStatus.success;
+  bool get isError => this == N2OStatus.error;
 }
 
 @immutable
 class N2oState extends Equatable{
-  final N2oStatus status;
+  final N2OStatus status;
 
-  const N2oState({this.status = N2oStatus.initial});
+  const N2oState({this.status = N2OStatus.initial});
 
   N2oState copyWith({
-    N2oStatus? status,
+    N2OStatus? status,
   }){
     return N2oState(status: status ?? this.status);
   }
