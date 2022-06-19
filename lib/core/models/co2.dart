@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+List<CO2Model> co2ModelFromJson(String str) =>
+    List<CO2Model>.from(json.decode(str).map((x) => CO2Model.fromJson(x)));
+
 class CO2Model {
   final String? id;
   final String? date;
@@ -32,23 +35,23 @@ class CO2Model {
 
   Map<String, dynamic> toJson() {
     final result = <String, dynamic>{};
-  
-    if(id != null){
+
+    if (id != null) {
       result.addAll({'id': id});
     }
-    if(date != null){
+    if (date != null) {
       result.addAll({'date': date});
     }
-    if(mean != null){
+    if (mean != null) {
       result.addAll({'mean': mean});
     }
-    if(unc != null){
+    if (unc != null) {
       result.addAll({'unc': unc});
     }
-    if(unit != null){
+    if (unit != null) {
       result.addAll({'unit': unit});
     }
-  
+
     return result;
   }
 
